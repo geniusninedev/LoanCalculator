@@ -739,7 +739,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
                         startActivity(Intent.createChooser(email, "Select Email Client"));
                         break;
                     case "Compound Interest":
-                        String message1="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Compounds per year:"+new DecimalFormat("##.##").format(Compoundsperyear)+"\n Interest Amount:"+new DecimalFormat("##.##").format(InterestAmount)+"\n Maturity Value:"+new DecimalFormat("##.##").format(compoundAmount)+"APY:"+new DecimalFormat("##.##").format(APY);
+                        String message1="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Compounds per year:"+new DecimalFormat("##.##").format(Compoundsperyear)+"\n Interest Amount:"+new DecimalFormat("##.##").format(InterestAmount)+"\n Maturity Value:"+new DecimalFormat("##.##").format(compoundAmount)+"\nAPY:"+new DecimalFormat("##.##").format(APY)+"%";
                         Intent email1 = new Intent(Intent.ACTION_SEND);
                         email1.putExtra(Intent.EXTRA_EMAIL, new String[]{ });
                         email1.putExtra(Intent.EXTRA_SUBJECT, "Loan Details");
