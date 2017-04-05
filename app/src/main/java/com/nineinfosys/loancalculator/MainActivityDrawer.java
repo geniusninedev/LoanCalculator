@@ -35,12 +35,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.facebook.login.LoginManager;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -52,8 +54,8 @@ import com.nineinfosys.loancalculator.Amortization.LoanAmortization;
 import com.nineinfosys.loancalculator.LoanCalcualtor.CompoundCalculation;
 import com.nineinfosys.loancalculator.LoanCalcualtor.loancalculation;
 
-import com.nineinfosys.loancalculator.Login.Contacts;
-import com.nineinfosys.loancalculator.Login.LoginActivity;
+import com.nineinfosys.loancalculator.Contacts.Contacts;
+import com.nineinfosys.loancalculator.LoginActivity.Login;
 import com.nineinfosys.loancalculator.Report.CompoundReport;
 import com.nineinfosys.loancalculator.Report.LoanReport;
 import com.squareup.okhttp.OkHttpClient;
@@ -119,6 +121,10 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
         /**
          *Setup the DrawerLayout and NavigationView
          */
+        MobileAds.initialize(MainActivityDrawer.this, getString(R.string.ads_app_id));
+        AdView mAdView = (AdView) this.findViewById(R.id.adViewLoanCalculator);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
@@ -405,7 +411,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()==null){
                     Log.e("ForumMainActivity:", "User was null so directed to Login activity");
-                    Intent loginIntent = new Intent(MainActivityDrawer.this, LoginActivity.class);
+                    Intent loginIntent = new Intent(MainActivityDrawer.this, Login.class);
                     loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(loginIntent);
                     finish();
