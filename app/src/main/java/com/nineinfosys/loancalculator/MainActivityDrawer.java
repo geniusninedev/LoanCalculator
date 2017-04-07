@@ -140,7 +140,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mNavigationView.setItemIconTintList(null);
-        //  mFragmentTransaction.replace(R.id.containerView, new DashBord()).commit();
+
         /**
          * Setup click events on the Navigation View Items.
          */
@@ -185,8 +185,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
 
         buttonLoanCalcvalue = (Button) findViewById(R.id.buttonLoanCalcvalue);
         buttonLoanCalculate = (Button) findViewById(R.id.buttonLoanCalculate);
-        // butttonLoanBasic = (Button) findViewById(R.id.buttonLoanBasic);
-        // butttonLoanAdvanced = (Button) findViewById(R.id.buttonLoanAdvance);
+
         buttonloanReset = (Button) findViewById(R.id.buttonLoanReset);
         buttonLoanAortization = (Button) findViewById(R.id.buttonLoanAmortization);
         buttonLoanEmail = (Button) findViewById(R.id.buttonLoanEmail);
@@ -556,9 +555,9 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
         super.onConfigurationChanged(newConfig);
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            //Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            //Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -683,7 +682,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
                 {
                     case "Simple Interest":
                         Intent i2=new Intent(this,LoanReport.class);
-                        // Toast.makeText(this, " ToatalInterest" + interestRate, Toast.LENGTH_SHORT).show();
+
                         i2.putExtra("PrincipalAmount",loanAmount);
                         i2.putExtra("interestRate",interestRate);
                         i2.putExtra("loanPeriod",loanPeriod);
@@ -715,7 +714,6 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
                     case "Simple Interest":
                         layoutResult.setVisibility(View.GONE);
                         layoutwarning.setVisibility(View.GONE);
-                       // layoutDisplayResult.setVisibility(View.GONE);
                         edittextLaonAmount.setText(null);
                         edittextInterestRate.setText(null);
                         edittextLoanMonths.setText(null);
@@ -736,7 +734,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
                 switch(strInteresttype)
                 {
                     case "Simple Interest":
-                        String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(LoanMonthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(LoanInterest)+"\n Total Payment:"+new DecimalFormat("##.##").format(LoanTotalPayment)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(LoanAnnualPayment);
+                        String message="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"%"+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Monthly Payment:"+new DecimalFormat("##.##").format(LoanMonthlyPayment)+"\n Total Interest Amount:"+new DecimalFormat("##.##").format(LoanInterest)+"\n Total Payment:"+new DecimalFormat("##.##").format(LoanTotalPayment)+"\nAnnual Payment:"+new DecimalFormat("##.##").format(LoanAnnualPayment);
                         Intent email = new Intent(Intent.ACTION_SEND);
                         email.putExtra(Intent.EXTRA_EMAIL, new String[]{ });
                         email.putExtra(Intent.EXTRA_SUBJECT, "Loan Details");
@@ -745,7 +743,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
                         startActivity(Intent.createChooser(email, "Select Email Client"));
                         break;
                     case "Compound Interest":
-                        String message1="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Compounds per year:"+new DecimalFormat("##.##").format(Compoundsperyear)+"\n Interest Amount:"+new DecimalFormat("##.##").format(InterestAmount)+"\n Maturity Value:"+new DecimalFormat("##.##").format(compoundAmount)+"\nAPY:"+new DecimalFormat("##.##").format(APY)+"%";
+                        String message1="Loan Amount:"+new DecimalFormat("##.##").format(loanAmount)+"\n Interest Rate:"+new DecimalFormat("##.##").format(interestRate)+"%"+"\n Loan Period:"+new DecimalFormat("##.##").format(loanPeriod)+"\n Compounds per year:"+new DecimalFormat("##.##").format(Compoundsperyear)+"\n Interest Amount:"+new DecimalFormat("##.##").format(InterestAmount)+"\n Maturity Value:"+new DecimalFormat("##.##").format(compoundAmount)+"\nAPY:"+new DecimalFormat("##.##").format(APY)+"%";
                         Intent email1 = new Intent(Intent.ACTION_SEND);
                         email1.putExtra(Intent.EXTRA_EMAIL, new String[]{ });
                         email1.putExtra(Intent.EXTRA_SUBJECT, "Loan Details");
@@ -935,7 +933,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
                             alertpropertyprice = Integer.parseInt(editTextalertpropertyprice.getText().toString());
                             alertdownpayment = Integer.parseInt(edittextalertdownpayment.getText().toString());
                             String alertspinnertax = spinneralerttaxtype.getSelectedItem().toString().trim();
-                            //  Toast.makeText(this, "" + alertspinnertax, Toast.LENGTH_SHORT).show();
+
                             if (alertspinnertax == "Amount") {
                                 alerttoatalLoanAmount = alertpropertyprice - alertdownpayment;
 
