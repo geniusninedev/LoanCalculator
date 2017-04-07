@@ -812,6 +812,10 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
            mortgageConstant = emi.MortgageConstant();
 
 
+
+
+
+
            //setting value to textview
            layoutResult.setVisibility(View.VISIBLE);
            layoutDisplayResult.setVisibility(LinearLayout.VISIBLE);
