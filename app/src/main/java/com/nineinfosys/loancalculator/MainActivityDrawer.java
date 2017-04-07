@@ -810,6 +810,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
            LoanInterest = emi.calculateTotalInterest();
            LoanAnnualPayment = emi.calculateAnnualPayment();
            mortgageConstant = emi.MortgageConstant();
+           mortgageConstant = emi.MortgageConstant();
 
 
 
