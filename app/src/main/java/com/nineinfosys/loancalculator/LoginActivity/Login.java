@@ -82,8 +82,7 @@ public class Login extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-       /* getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);*/
+
         getSupportActionBar().setTitle("Login");
 
         //AuthListener to check whether user is Login Or Not
