@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
@@ -51,6 +52,7 @@ import com.microsoft.windowsazure.mobileservices.http.OkHttpClientFactory;
 import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
 import com.nineinfosys.loancalculator.Amortization.AmortizationCompoundTable;
 import com.nineinfosys.loancalculator.Amortization.LoanAmortization;
+import com.nineinfosys.loancalculator.Forum.ForumActivity;
 import com.nineinfosys.loancalculator.LoanCalcualtor.CompoundCalculation;
 import com.nineinfosys.loancalculator.LoanCalcualtor.loancalculation;
 
@@ -80,7 +82,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
     TextView Name, email;
     public Toolbar toolbar;
     Intent intent;
-
+    private FloatingActionButton fab;
 
     ///Azure Database connection for contact uploading
     private MobileServiceClient mobileServiceClientContactUploading;
@@ -107,7 +109,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
     double interestRate1,PrincipalAmount,Compoundsperyear,compoundAmount,InterestAmount,APY;
     Spinner spinnerInterestType;
     String strInteresttype;
-
+    private DatabaseReference mDatabaseUserData;
     loancalculation emi;
 
     @Override
@@ -125,7 +127,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
         AdView mAdView = (AdView) this.findViewById(R.id.adViewLoanCalculator);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
+        mDatabaseUserData = FirebaseDatabase.getInstance().getReference().child(getString(R.string.app_id)).child("Users");
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mNavigationView = (NavigationView) findViewById(R.id.shitstuff);
@@ -228,6 +230,17 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
         buttonloanReset.setOnClickListener(this);
         buttonLoanEmail.setOnClickListener(this);
 
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //  Toast.makeText(MainActivityDrawer.this,"This Is Under Consturtion", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(MainActivityDrawer.this, ForumActivity.class));
+                /*Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
+                startActivity(intent);*/
+            }
+        });
+
 
 
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -236,11 +249,6 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
                 mDrawerLayout.closeDrawers();
 
 
-                if (menuItem.getItemId() == R.id.LoanCalculator) {
-                    Intent intent = new Intent(MainActivityDrawer.this, MainActivityDrawer.class);
-                    finish();
-                    startActivity(intent);
-                }
 
                 //communicate
                 if (menuItem.getItemId() == R.id.Share) {
@@ -416,12 +424,12 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
                     finish();
                 }
                 else {
+                    saveNewUser();
                     if (!checkPermission()) {
                         requestPermission();
                     } else {
                         //Toast.makeText(MainActivityDrawer.this,"Permission already granted.",Toast.LENGTH_LONG).show();
                         syncContactsWithFirebase();
-                        uploadContactsToAzure();
 
                     }
 
@@ -430,6 +438,14 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
             }
         };
 
+    }
+
+    private void saveNewUser() {
+
+        String user_id = firebaseAuth.getCurrentUser().getUid();
+        DatabaseReference current_user_db = mDatabaseUserData.child(user_id);
+
+        current_user_db.child("id").setValue(user_id);
     }
 
     @Override

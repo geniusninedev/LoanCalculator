@@ -19,6 +19,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
         android:background="#ffffff">
 
@@ -28,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginTop="20dp"
             android:background="#ffffff">
             <ScrollView
                 android:layout_width="match_parent"
@@ -561,6 +563,7 @@
                                 android:id="@+id/textViewAnnualPayment"
                                 android:textColor="@color/main_text_color"
                                 android:layout_weight="1"
+                                android:textSize="15dp"
                                 android:layout_marginLeft="35dp"
                                 android:textStyle="bold"/>
                             <LinearLayout
@@ -576,6 +579,7 @@
                                     android:textStyle="bold"
                                     android:layout_weight="1"
                                     android:gravity="right"
+                                    android:textSize="15dp"
                                     android:textColor="@color/colorAccent" />
                                 <TextView
                                     android:text=" INR"
@@ -602,6 +606,7 @@
                                 android:id="@+id/textViewmortgage"
                                 android:textColor="@color/main_text_color"
                                 android:layout_weight="1"
+                                android:textSize="15dp"
                                 android:layout_marginLeft="35dp"
                                 android:textStyle="bold"/>
                             <LinearLayout
@@ -617,6 +622,7 @@
                                     android:textStyle="bold"
                                     android:layout_weight="1"
                                     android:gravity="right"
+                                    android:textSize="15dp"
                                     android:textColor="@color/colorAccent" />
                                 <TextView
                                     android:text=" %"
@@ -629,10 +635,6 @@
                                     android:textStyle="bold"/>
                             </LinearLayout>
                         </LinearLayout>
-
-
-
-
 
                         </LinearLayout>
 
@@ -857,8 +859,16 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:src="@drawable/ic_forum_white_24dp" />
         </FrameLayout>
 
 

@@ -195,11 +195,11 @@ public class CompoundReport extends AppCompatActivity implements OnChartValueSel
                 mChart.invalidate();
                 break;
             }
-            case R.id.actionSave: {
+          /*  case R.id.actionSave: {
 
                 mChart.saveToPath("title" + System.currentTimeMillis(), "");
                 break;
-            }
+            }*/
             case R.id.actionTogglePercent:
                 mChart.setUsePercentValues(!mChart.isUsePercentValuesEnabled());
                 mChart.invalidate();

@@ -2,14 +2,6 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:id="@+id/grp1" android:checkableBehavior="single" >
-        <item
-            android:id="@+id/LoanCalculator"
-            android:icon="@drawable/ic_loan"
-            android:title="Loan Calculator" />
-    </group>
-
-
     <item
            android:id="@+id/Communicate"
            android:title="Communicate" >
