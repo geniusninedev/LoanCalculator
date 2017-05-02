@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.nineinfosys.loancalculator.MainActivityDrawer;
 import com.nineinfosys.loancalculator.R;
 import com.nineinfosys.loancalculator.fragment.MyTopPostsFragment;
 import com.nineinfosys.loancalculator.fragment.RecentPostsFragment;
@@ -66,23 +67,11 @@ public class ForumActivity extends BaseActivity {
         findViewById(R.id.fab_new_post).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(ForumActivity.this, NewPostActivity.class));
             }
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        if (id == android.R.id.home) {
 
-            finish();
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

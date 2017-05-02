@@ -330,7 +330,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == android.R.id.home) {
-            Intent intent=new Intent(PostDetailActivity.this,MainActivityDrawer.class);
+            Intent intent=new Intent(PostDetailActivity.this,ForumActivity.class);
             finish();
             startActivity(intent);
         }
