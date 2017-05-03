@@ -234,7 +234,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+             //   finish();
                 startActivity(new Intent(MainActivityDrawer.this, ForumActivity.class));
                 /*Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
                 startActivity(intent);*/

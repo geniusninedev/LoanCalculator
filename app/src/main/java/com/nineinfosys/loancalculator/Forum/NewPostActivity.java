@@ -166,7 +166,7 @@ public class NewPostActivity extends BaseActivity {
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == android.R.id.home) {
-            Intent intent=new Intent(NewPostActivity.this,MainActivityDrawer.class);
+            Intent intent=new Intent(NewPostActivity.this,ForumActivity.class);
             finish();
             startActivity(intent);
         }
