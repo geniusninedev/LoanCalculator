@@ -115,6 +115,7 @@ public class NewPostActivity extends BaseActivity {
 
                         // Finish this Activity, back to the stream
                         setEditingEnabled(true);
+                        startActivity(new Intent(NewPostActivity.this,ForumActivity.class));
                         finish();
                         // [END_EXCLUDE]
                     }
@@ -173,4 +174,11 @@ public class NewPostActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(NewPostActivity.this,ForumActivity.class);
+        finish();
+        startActivity(intent);
+    }
 }

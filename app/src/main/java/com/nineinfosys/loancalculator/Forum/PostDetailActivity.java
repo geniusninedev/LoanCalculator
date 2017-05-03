@@ -337,4 +337,11 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(PostDetailActivity.this,ForumActivity.class);
+        finish();
+        startActivity(intent);
+    }
 }
