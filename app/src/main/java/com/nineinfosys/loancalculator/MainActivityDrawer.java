@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -111,7 +112,7 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
     String strInteresttype;
     private DatabaseReference mDatabaseUserData;
     loancalculation emi;
-
+    Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -234,10 +235,19 @@ public class MainActivityDrawer extends AppCompatActivity implements View.OnClic
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //   finish();
-                startActivity(new Intent(MainActivityDrawer.this, ForumActivity.class));
-                /*Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
-                startActivity(intent);*/
+                handler = new Handler();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(new Intent(MainActivityDrawer.this, ForumActivity.class));
+                            }
+                        });
+
+                    }
+                }).start();
             }
         });
 
