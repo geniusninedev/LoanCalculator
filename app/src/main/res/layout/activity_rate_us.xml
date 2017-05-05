@@ -4,7 +4,7 @@
     android:id="@+id/activity_request_app"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nineinfosys.loancalculator.MainActivityDrawer">
+    tools:context="com.geniusnine.loancalculator.MainActivityDrawer">
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar" />

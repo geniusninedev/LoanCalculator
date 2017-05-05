@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nineinfosys.loancalculator">
+    package="com.geniusnine.loancalculator">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -22,8 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".LoginActivity.CustomApplication">
-        <activity android:name="com.nineinfosys.loancalculator.MainActivityDrawer">
+        android:name="com.geniusnine.loancalculator.LoginActivity.CustomApplication">
+        <activity android:name="com.geniusnine.loancalculator.MainActivityDrawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,88 +41,88 @@
             android:label="@string/app_name" />
 
 
-        <activity android:name="com.nineinfosys.loancalculator.Amortization.LoanAmortization"
+        <activity android:name="com.geniusnine.loancalculator.Amortization.LoanAmortization"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nineinfosys.loancalculator.MainActivityDrawer"/>
+                android:value="com.geniusnine.loancalculator.MainActivityDrawer"/>
         </activity>
 
-        <activity android:name="com.nineinfosys.loancalculator.Report.LoanFullReport"
+        <activity android:name="com.geniusnine.loancalculator.Report.LoanFullReport"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nineinfosys.loancalculator.MainActivityDrawer"/>
+                android:value="com.geniusnine.loancalculator.MainActivityDrawer"/>
         </activity>
 
-        <activity android:name="com.nineinfosys.loancalculator.Report.LoanReport"
+        <activity android:name="com.geniusnine.loancalculator.Report.LoanReport"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nineinfosys.loancalculator.MainActivityDrawer"/>
+                android:value="com.geniusnine.loancalculator.MainActivityDrawer"/>
         </activity>
-        <activity android:name="com.nineinfosys.loancalculator.Report.CompoundFullReport"
+        <activity android:name="com.geniusnine.loancalculator.Report.CompoundFullReport"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nineinfosys.loancalculator.MainActivityDrawer"/>
+                android:value="com.geniusnine.loancalculator.MainActivityDrawer"/>
         </activity>
-        <activity android:name="com.nineinfosys.loancalculator.Report.CompoundReport"
+        <activity android:name="com.geniusnine.loancalculator.Report.CompoundReport"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nineinfosys.loancalculator.MainActivityDrawer"/>
+                android:value="com.geniusnine.loancalculator.MainActivityDrawer"/>
         </activity>
-        <activity android:name="com.nineinfosys.loancalculator.Amortization.AmortizationCompoundTable"
+        <activity android:name="com.geniusnine.loancalculator.Amortization.AmortizationCompoundTable"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nineinfosys.loancalculator.MainActivityDrawer"/>
+                android:value="com.geniusnine.loancalculator.MainActivityDrawer"/>
         </activity>
 
         <activity
-            android:name=".RequestApp"
+            android:name="com.geniusnine.loancalculator.RequestApp"
             android:configChanges="orientation|screenSize|keyboardHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivityDrawer" />
+                android:value="com.geniusnine.loancalculator.MainActivityDrawer" />
         </activity>
 
-        <activity android:name=".LoginActivity.Login"
+        <activity android:name="com.geniusnine.loancalculator.LoginActivity.Login"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
 
         <activity
-            android:name=".LoginActivity.SignUp"
+            android:name="com.geniusnine.loancalculator.LoginActivity.SignUp"
             android:windowSoftInputMode="stateHidden|adjustResize"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity.Login" />
+                android:value="com.geniusnine.loancalculator.LoginActivity.Login" />
         </activity>
 
         <activity
-            android:name=".Forum.NewPostActivity"
+            android:name="com.geniusnine.loancalculator.Forum.NewPostActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="Add New Post">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Forum.ForumActivity" /></activity>
+                android:value="com.geniusnine.loancalculator.Forum.ForumActivity" /></activity>
         <activity
-            android:name=".Forum.PostDetailActivity"
+            android:name="com.geniusnine.loancalculator.Forum.PostDetailActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="Comment" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Forum.ForumActivity" /></activity>
+                android:value="com.geniusnine.loancalculator.Forum.ForumActivity" /></activity>
         <activity
-            android:name=".Forum.ForumActivity"
+            android:name="com.geniusnine.loancalculator.Forum.ForumActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="Forum" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivityDrawer" /></activity>
+                android:value="com.geniusnine.loancalculator.MainActivityDrawer" /></activity>
     </application>
 
 </manifest>
