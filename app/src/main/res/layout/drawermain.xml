@@ -148,7 +148,6 @@
                             android:layout_width="106dp"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView1loanmonths"
-                            android:layout_marginLeft="5dp"
                             android:textSize="15dp"
                             android:textColor="@color/main_text_color"
                             android:textStyle="bold"/>
