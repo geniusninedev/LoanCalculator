@@ -144,13 +144,14 @@
 
 
                         <TextView
-                            android:text=" Loan Term"
+                            android:id="@+id/textView1loanmonths"
                             android:layout_width="106dp"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView1loanmonths"
-                            android:textSize="15dp"
+                            android:layout_marginLeft="2dp"
+                            android:text=" Loan Term"
                             android:textColor="@color/main_text_color"
-                            android:textStyle="bold"/>
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
 
                         <EditText
                             android:layout_width="match_parent"
