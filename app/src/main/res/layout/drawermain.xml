@@ -429,7 +429,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:layout_gravity="center"
-                            android:layout_marginTop="3dp"
+                            android:layout_marginTop="5dp"
                             >
 
                             <TextView
@@ -474,7 +474,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:layout_gravity="center"
-                            android:layout_marginTop="3dp">
+                            android:layout_marginTop="5dp">
 
                             <TextView
                                 android:text="Total Payment"
@@ -518,7 +518,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:layout_gravity="center"
-                            android:layout_marginTop="3dp">
+                            android:layout_marginTop="5dp">
 
                             <TextView
                                 android:text="Total Interest"
@@ -657,6 +657,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
+                                android:layout_marginTop="3dp"
                                 android:layout_weight="1">
 
                                 <TextView
@@ -701,6 +702,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
+                                android:layout_marginTop="3dp"
                                 >
 
                                 <TextView
