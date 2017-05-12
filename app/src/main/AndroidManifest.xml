@@ -17,9 +17,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_loan_calcualtor"
+        android:icon="@mipmap/ic_launcher_loan_calculator"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="com.geniusnine.loancalculator.LoginActivity.CustomApplication">
